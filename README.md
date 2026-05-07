@@ -1,73 +1,48 @@
-# React + TypeScript + Vite
+# Uber Share | Sistema de Divisão de Despesas 🚗💨
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um aplicativo moderno e responsivo para gerenciar e dividir despesas de transporte (Uber/99) entre grupos de pessoas. Desenvolvido com uma estética **Neon Dark** premium e foco em usabilidade.
 
-Currently, two official plugins are available:
+![Logo](src/assets/logo.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Funcionalidades
 
-## React Compiler
+- 🔒 **Controle de Acesso (RBAC):** Níveis de administrador e usuário comum.
+- 👥 **Gestão de Pessoas:** Cadastro, edição e atribuição de cores/fotos personalizadas.
+- 📊 **Cálculo Automático de Saldos:** Algoritmo inteligente que minimiza o número de transferências necessárias entre os participantes.
+- 📅 **Filtro Mensal:** Visualize e gerencie corridas de meses específicos de forma organizada.
+- 📱 **Interface Mobile-First:** Design otimizado para celulares, com navegação intuitiva e animações suaves.
+- 🎨 **Estética Neon:** Tema escuro com brilhos neon e micro-interações usando Framer Motion.
+- 📲 **PWA Ready:** Pronto para ser instalado como um aplicativo nativo no celular.
+- 💬 **Compartilhamento via WhatsApp:** Gere resumos de fechamento formatados para enviar no grupo.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Tecnologias
 
-## Expanding the ESLint configuration
+- **Frontend:** React 19 + TypeScript
+- **Estilização:** Tailwind CSS 4 + Lucide React (Ícones)
+- **Estado:** Zustand (com persistência local)
+- **Animações:** Framer Motion
+- **Build Tool:** Vite 8
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Como Executar
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. Instale as dependências:
+   ```bash
+   npm install
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+2. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3. Para gerar a versão de produção:
+   ```bash
+   npm run build
+   ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🔐 Acesso Padrão (MVP)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Admin:** `admin@admin.com` / Senha: `123`
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+Desenvolvido com ❤️ para facilitar o acerto de contas do dia a dia.

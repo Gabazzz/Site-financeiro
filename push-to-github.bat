@@ -17,7 +17,7 @@ echo === Inicializando repositorio ===
 echo.
 echo === Configurando remote ===
 "%GIT_EXE%" remote remove origin 2>nul
-"%GIT_EXE%" remote add origin https://github.com/Gabazzz/CLT-divide-uber.git
+"%GIT_EXE%" remote add origin https://github.com/Gabazzz/Site-financeiro.git
 
 echo.
 echo === Adicionando arquivos ===

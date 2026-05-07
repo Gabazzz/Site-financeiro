@@ -16,19 +16,21 @@ export const ProfilePage: React.FC = () => {
 
   const [email, setEmail] = useState(currentUser?.email || '');
   const [password, setPassword] = useState(currentUser?.password || '');
+  const [pixKey, setPixKey] = useState(currentUser?.pixKey || '');
   const [isSaved, setIsSaved] = useState(false);
 
   // Sync when currentUser updates (e.g. after photo upload)
   useEffect(() => {
     setEmail(currentUser?.email || '');
     setPassword(currentUser?.password || '');
+    setPixKey(currentUser?.pixKey || '');
   }, [currentUser?.id]);
 
   if (!currentUser) return null;
 
   const handleSave = (e: React.FormEvent) => {
     e.preventDefault();
-    updateProfile({ email, password });
+    updateProfile({ email, password, pixKey });
     setIsSaved(true);
     setTimeout(() => setIsSaved(false), 2500);
   };
@@ -107,6 +109,13 @@ export const ProfilePage: React.FC = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••"
                 required
+              />
+              <Input
+                label="Chave PIX"
+                type="text"
+                value={pixKey}
+                onChange={(e) => setPixKey(e.target.value)}
+                placeholder="CPF, Telefone ou E-mail"
               />
 
               <motion.div whileTap={{ scale: 0.98 }}>
